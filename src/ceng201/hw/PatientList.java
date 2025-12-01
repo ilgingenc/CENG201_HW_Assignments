@@ -14,7 +14,7 @@ public class PatientList {
     }
 
     //I added a variable to the end.
-    void addPatient(Patient p) {
+    public void addPatient(Patient p) {
         Node variable = new Node(p);
         if (head == null) {  //If the list empty runs here.
             head = variable;
@@ -29,7 +29,11 @@ public class PatientList {
         }
     }
 
-    void removePatient(Patient p) {
+  //1 arda 2 ılgın 3 emre  4 buket
+    //head arda taıl buket
+    //head arda taılde degısmıyo
+    //arda next ılgın ama o emre oluyo
+    public void removePatient(int id) {
         //delete the first variable
         if (head == null) {
             System.out.println("The list is empty.");
@@ -51,9 +55,11 @@ public class PatientList {
             tail = null;
             System.out.println("I deleted the only variable on the list.");
         } else {
+
+
             Node temp = head;
-            while(temp.next!=tail){
-                temp=temp.next;
+            while (temp.next != tail) {
+                temp = temp.next;
 
 
             }
