@@ -31,7 +31,7 @@ public class PatientList {
     }
 
     public void removePatient(int id) {
-
+        System.out.println(id + ". patient deleted");
         if (head == null) { //If the list empty.
             System.out.println("The list is empty.");
             return;
@@ -76,6 +76,7 @@ public class PatientList {
         Node temp = head;
         while (temp != null) {
             if (temp.data.id == id) {
+                System.out.println("Founded patient:" + temp.data.name);
                 return temp.data;
             }
             temp = temp.next;
@@ -90,7 +91,7 @@ public class PatientList {
         } else {
             Node current = head;
             while (current != null) {
-                System.out.println(current.data);
+                System.out.println("Name:" + current.data.name);
                 current = current.next;
             }
         }
