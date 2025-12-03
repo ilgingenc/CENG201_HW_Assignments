@@ -1,5 +1,7 @@
 package ceng201.hw;
 
+import java.sql.SQLOutput;
+
 public class PatientList {
     private Node head;
     private Node tail;
@@ -7,6 +9,7 @@ public class PatientList {
     private class Node {
         Patient data;
         Node next;
+
 
         Node(Patient data) {
             this.data = data;
@@ -29,43 +32,42 @@ public class PatientList {
         }
     }
 
-  //1 arda 2 ılgın 3 emre  4 buket
-    //head arda taıl buket
-    //head arda taılde degısmıyo
-    //arda next ılgın ama o emre oluyo
     public void removePatient(int id) {
-        //delete the first variable
-        if (head == null) {
+
+        if (head == null) { //If the list empty.
             System.out.println("The list is empty.");
-        } else if (head.next == null) {
-            head = null;
-            tail = null;
-            System.out.println("I deleted the only variable on the list.");
-        } else {
-            head.next = head;
-            System.out.println("I deleted first variable.");
+            return;
         }
 
-        //delete the middle
-        //delete the end
-        if (head == null) {
-            System.out.println("The list is empty.");
-        } else if (head.next == null) {
+        if (head.next == null && head.data.id == id) { //If there is a just one variable.
             head = null;
             tail = null;
-            System.out.println("I deleted the only variable on the list.");
-        } else {
-
-
-            Node temp = head;
-            while (temp.next != tail) {
-                temp = temp.next;
-
-
-            }
-
+            System.out.println("The only element on the list has been deleted.");
+            return;
         }
+        if (head.next != null && head.data.id == id) {
+            head = head.next;
+            System.out.println("The element at the beginning has been deleted.");
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null && temp.next.data.id != id) {
+            temp = temp.next;
+        }
+        if (temp.next == null) {
+            System.out.println("Searched id not found.");
+            return;
+        }
+        temp.next=temp.next.next;
+
+       if( temp.next == null) {
+           tail = temp;
+           System.out.println("The element at the end has been deleted.");
+       }
     }
 }
+
 
 

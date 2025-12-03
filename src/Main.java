@@ -6,15 +6,5 @@ import ceng201.hw.PatientList;
 public class Main {
     public static void main(String[] args) {
 
-        PatientList patientList=new PatientList();
-        Patient patient1=new Patient(1,"arda",2,20) ;
-        Patient patient2=new Patient(2,"ılgın",1,20) ;
-        Patient patient3=new Patient(3,"buket",1,30) ;
-        patientList.addPatient(patient1);
-        patientList.addPatient(patient2);
-        patientList.addPatient(patient3);
-
-
-        patientList.removePatient();
     }
 }
