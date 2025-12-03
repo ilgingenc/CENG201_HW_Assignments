@@ -1,7 +1,5 @@
 package ceng201.hw;
 
-import java.sql.SQLOutput;
-
 public class PatientList {
     private Node head;
     private Node tail;
@@ -45,6 +43,8 @@ public class PatientList {
             System.out.println("The only element on the list has been deleted.");
             return;
         }
+
+
         if (head.next != null && head.data.id == id) {
             head = head.next;
             System.out.println("The element at the beginning has been deleted.");
@@ -60,13 +60,42 @@ public class PatientList {
             System.out.println("Searched id not found.");
             return;
         }
-        temp.next=temp.next.next;
+        temp.next = temp.next.next;
 
-       if( temp.next == null) {
-           tail = temp;
-           System.out.println("The element at the end has been deleted.");
-       }
+        if (temp.next == null) {
+            tail = temp;
+            System.out.println("The element at the end has been deleted.");
+        }
     }
+
+    public Patient findPatient(int id) {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return null;
+        }
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data.id == id) {
+                return temp.data;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+
+    public void printList() {
+        if (head == null) {
+            System.out.println("The list is empty:");
+
+        } else {
+            Node current = head;
+            while (current != null) {
+                System.out.println(current.data);
+                current = current.next;
+            }
+        }
+    }
+
 }
 
 
