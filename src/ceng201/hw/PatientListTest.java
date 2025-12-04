@@ -1,6 +1,6 @@
 package ceng201.hw;
 
-public class Main {
+public class PatientListTest {
     public static void main(String[] args) {
         PatientList list = new PatientList();
 
