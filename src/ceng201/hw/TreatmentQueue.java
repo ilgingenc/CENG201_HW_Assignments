@@ -7,11 +7,11 @@ public class TreatmentQueue {
 
 
     private class Node {
-        TreatmentRequest data;
+        TreatmentRequest treatmentRequest;
         Node next;
 
         Node(TreatmentRequest data) {
-            this.data = data;
+            this.treatmentRequest = data;
         }
     }
 
@@ -36,21 +36,32 @@ public class TreatmentQueue {
             System.out.println("The list is empty.");
             return null;
         } else if (front.next == null) {
-            TreatmentRequest current = front.data;
+            TreatmentRequest current = front.treatmentRequest;
             front = null;
             rear = null;
             System.out.println("The only patient deleted.");
             size--;
             return current;
         } else {
-            TreatmentRequest current = front.data;
+            TreatmentRequest current = front.treatmentRequest;
             front = front.next;
             size--;
             return current;
         }
 
     }
-    public int size(){
+
+    public int size() {
         return size;
+    }
+
+    public void print() {
+        Node temp;
+        temp=front;
+        while (temp!=null){
+            System.out.println(temp.treatmentRequest);
+            temp= temp.next;
+        }
+
     }
 }
