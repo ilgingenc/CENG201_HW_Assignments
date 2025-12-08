@@ -71,7 +71,7 @@ public class PatientList {
     public Patient findPatient(int id) {
         if (head == null) {
             System.out.println("The list is empty.");
-            return null;
+            return null; // Id not found
         }
         Node temp = head;
         while (temp != null) {
@@ -84,14 +84,15 @@ public class PatientList {
         return null;
     }
 
-    public void printList() {
+    public void printList() { //I signed up for all the patient list
+        System.out.println("List:");
         if (head == null) {
             System.out.println("The list is empty:");
 
         } else {
             Node current = head;
             while (current != null) {
-                System.out.println("Name:" + current.data.name);
+                System.out.print("Name:" + current.data.name + " ");
                 current = current.next;
             }
         }
