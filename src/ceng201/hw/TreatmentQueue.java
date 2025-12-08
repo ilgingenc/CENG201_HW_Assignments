@@ -59,7 +59,7 @@ public class TreatmentQueue {
         Node temp;
         temp=front;
         while (temp!=null){
-            System.out.println(temp.treatmentRequest);
+            System.out.println(temp.treatmentRequest.patientId);
             temp= temp.next;
         }
 
