@@ -48,12 +48,10 @@ public class DischargeStack {
             return;
         }
         Node temp = top;
-        while (top != null) {
-            System.out.println("Patient id: " + temp.x.patientId + "Patient Discharge Time: " + temp.x.dischargeTime);
+        while (temp!= null) {
+            System.out.println("Patient id: " + temp.x.patientId + " Patient Discharge Time: " + temp.x.dischargeTime);
 
-            top = top.next;
-
-
+            temp = temp.next;
         }
     }
 }
