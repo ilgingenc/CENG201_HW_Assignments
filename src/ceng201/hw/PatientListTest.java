@@ -1,5 +1,7 @@
 package ceng201.hw;
 
+import java.util.HashMap;
+
 public class PatientListTest {
     public static void main(String[] args) {
         PatientList list = new PatientList();
@@ -17,5 +19,7 @@ public class PatientListTest {
         list.removePatient(4);
         list.findPatient(2);
         list.printList();
+
+
     }
 }
