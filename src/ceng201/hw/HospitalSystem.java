@@ -20,9 +20,29 @@ public class HospitalSystem {
 
     public void addNewPatient(Patient p) {
         patientList.addPatient(p);
-        patientMap.put(p.id,p);
+        patientMap.put(p.id, p);
     }
-    public void addTreatmentRequest(TreatmentRequest request){
 
+    public void addTreatmentRequest(TreatmentRequest request) {
+        if (request.isPriority) {
+            priorityQueue.enqueue(request);
+        } else {
+            normalQueue.enqueue(request);
+        }
+    }
+    public Patient processTreatment(){
+        TreatmentRequest request;
+        if (priorityQueue.size()>0){
+            request=priorityQueue.dequeue();
+
+        }
+        else if(normalQueue.size()>0){
+            request=normalQueue.dequeue();
+
+        }
+        else{
+            return null;
+        }
+        return null;
     }
 }

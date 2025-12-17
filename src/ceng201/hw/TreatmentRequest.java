@@ -11,4 +11,8 @@ public class TreatmentRequest {
         this.patientId = patientId;
         this.isPriority=isPriority;
     }
+
+    public boolean isPriority() {
+        return isPriority;
+    }
 }
