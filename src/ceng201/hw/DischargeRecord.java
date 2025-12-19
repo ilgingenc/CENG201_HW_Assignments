@@ -4,7 +4,7 @@ public class DischargeRecord {
     int patientId;
     long dischargeTime;
 
-    public DischargeRecord(int patientId, long dischargeTime){
-        this.dischargeTime=dischargeTime;
+    public DischargeRecord(int patientId){
+        this.dischargeTime=System.currentTimeMillis();
         this.patientId=patientId;
 }}

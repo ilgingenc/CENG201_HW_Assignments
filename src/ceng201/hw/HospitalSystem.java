@@ -30,19 +30,34 @@ public class HospitalSystem {
             normalQueue.enqueue(request);
         }
     }
-    public Patient processTreatment(){
+
+    public Patient processTreatment() {
         TreatmentRequest request;
-        if (priorityQueue.size()>0){
-            request=priorityQueue.dequeue();
+        if (priorityQueue.size() > 0) {
+            request = priorityQueue.dequeue();
 
-        }
-        else if(normalQueue.size()>0){
-            request=normalQueue.dequeue();
-
-        }
-        else{
+        } else if (normalQueue.size() > 0) {
+            request = normalQueue.dequeue();
+        } else {
             return null;
         }
-        return null;
+        DischargeRecord dischargeRecord = new DischargeRecord(request.patientId);
+        dischargeStack.push(dischargeRecord);
+        return patientMap.get(request.patientId);
+    }
+
+    public void printSystemState() {
+        System.out.println("Current patients in system.");
+        patientList.printList();
+
+        System.out.println("Priority treatment in queue:");
+        priorityQueue.print();
+
+        System.out.println("Normal treatment in queue");
+        normalQueue.print();
+
+        System.out.println("Discharge record:");
+        dischargeStack.printStack();
+
     }
 }
