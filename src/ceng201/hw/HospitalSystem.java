@@ -64,7 +64,7 @@ public class HospitalSystem {
     public void printPatientSortedBySeverity(){
         ArrayList<Patient> patientListForSorting =new ArrayList<>(patientMap.values());
         for (int i=0; i<patientListForSorting.size(); i++){
-            for (int j= 0 ;j<patientListForSorting.size();j++){
+            for (int j= 0 ;j<patientListForSorting.size()-1-i ;j++){
                 if (patientListForSorting.get(j).severity<patientListForSorting.get(j+1).severity){
                     Patient temp = patientListForSorting.get(j);
                     patientListForSorting.set(j,patientListForSorting.get(j+1));
