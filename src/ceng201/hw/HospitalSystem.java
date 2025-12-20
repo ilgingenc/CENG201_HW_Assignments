@@ -1,5 +1,6 @@
 package ceng201.hw;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -59,5 +60,8 @@ public class HospitalSystem {
         System.out.println("Discharge record:");
         dischargeStack.printStack();
 
+    }
+    public void printPatientSortedBySeverity(){
+        ArrayList<Patient> patientListForSorting =new ArrayList<>(patientMap.values());
     }
 }
