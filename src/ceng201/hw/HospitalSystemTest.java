@@ -35,12 +35,12 @@ public class HospitalSystemTest {
         test.addTreatmentRequest(new TreatmentRequest(7, true));
         test.addTreatmentRequest(new TreatmentRequest(8, true));
 
-        test.dischargeStack.push(new DischargeRecord(9));
-        test.dischargeStack.push(new DischargeRecord(10));
+        test.dischargeStack.push(new DischargeRecord(9, System.currentTimeMillis()));
+        test.dischargeStack.push(new DischargeRecord(10, System.currentTimeMillis()));
 
         test.processTreatment();
-        test.processTreatment();
-        test.processTreatment();
+        //test.processTreatment();
+        //test.processTreatment();
 
         System.out.println("Final state");
         test.printSystemState();

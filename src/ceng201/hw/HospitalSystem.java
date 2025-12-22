@@ -42,7 +42,7 @@ public class HospitalSystem {
         } else {
             return null;
         }
-        DischargeRecord dischargeRecord = new DischargeRecord(request.patientId);
+        DischargeRecord dischargeRecord = new DischargeRecord(request.patientId, System.currentTimeMillis());
         dischargeStack.push(dischargeRecord);
         return patientMap.get(request.patientId);
     }
