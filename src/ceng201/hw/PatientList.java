@@ -3,6 +3,7 @@ package ceng201.hw;
 public class PatientList {
     private Node head;
     private Node tail;
+    private int patientCount = 0;
 
     private class Node {
         Patient data;
@@ -10,22 +11,25 @@ public class PatientList {
 
 
         Node(Patient data) { //Node constructor            this.data = data;
+            this.data = data;
         }
     }
 
     //I added a variable to the end.
     public void addPatient(Patient p) {
         Node variable = new Node(p);
+        patientCount++;
         if (head == null) {  //If the list empty runs here.
             head = variable;
             tail = variable;
             head.next = null;
-            System.out.println("First variable added.");
+            System.out.println("1. patient added.");
 
         } else { // If the list is not empty runs here.
             tail.next = variable;
             tail = variable;
             variable.next = null;
+            System.out.println(patientCount + ". patient added.");
         }
     }
 
@@ -44,7 +48,7 @@ public class PatientList {
         }
 
 
-        if (head.next != null && head.data.id == id) { //If the patient to be deleted is at the top of the list.
+        if (head.next != null && head.data != null && head.data.id == id) { //If the patient to be deleted is at the top of the list.
             head = head.next;
             System.out.println("The element at the beginning has been deleted.");
             return;
@@ -52,7 +56,7 @@ public class PatientList {
 
         Node temp = head;
 
-        while (temp.next != null && temp.next.data.id != id) { //Found the node before the node to be deleted.
+        while (temp.next != null && head.data != null && temp.next.data.id != id) { //Found the node before the node to be deleted.
             temp = temp.next;
         }
         if (temp.next == null) { //If the ID cannot be found
@@ -74,7 +78,7 @@ public class PatientList {
         }
         Node temp = head;
         while (temp != null) { //The list is scanned from the first node to the last node.
-            if (temp.data.id == id) { //If the ID matches, the patient is found.
+            if (temp.data != null && temp.data.id == id) { //If the ID matches, the patient is found.
                 System.out.println("Founded patient:" + temp.data.name);
                 return temp.data;
             }
@@ -90,8 +94,8 @@ public class PatientList {
 
         } else { //The list is printed from start to finish.
             Node current = head;
-            while (current != null) {
-                System.out.print("Name:" + current.data.name + " ");
+            while (current != null && current.data != null) {
+                System.out.println("Name:" + current.data.name + " ");
                 current = current.next;
             }
         }

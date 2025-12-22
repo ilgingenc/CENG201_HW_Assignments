@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class PatientListTest {
     public static void main(String[] args) {
-        PatientList list = new PatientList();
+        PatientList list = new PatientList(); //Patientlist object created.
 
         Patient patient1 = new Patient(1, "Ilgın", 5, 21);
         Patient patient2 = new Patient(2, "Arda", 1, 19);
