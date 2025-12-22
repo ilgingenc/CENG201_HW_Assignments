@@ -10,7 +10,7 @@ public class PatientList {
         Node next;
 
 
-        Node(Patient data) { //Node constructor            this.data = data;
+        Node(Patient data) { //Node constructor
             this.data = data;
         }
     }
