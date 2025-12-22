@@ -15,7 +15,7 @@ public class PatientList {
         }
     }
 
-    //I added a variable to the end.
+    //I added a patient to the end.
     public void addPatient(Patient p) {
         Node variable = new Node(p);
         patientCount++;
@@ -74,7 +74,7 @@ public class PatientList {
     public Patient findPatient(int id) {//Finds the patient in the given ID.
         if (head == null) { //IF the list is empty runs here.
             System.out.println("The list is empty.");
-            return null; // Id not found
+            return null; // ID not found
         }
         Node temp = head;
         while (temp != null) { //The list is scanned from the first node to the last node.
