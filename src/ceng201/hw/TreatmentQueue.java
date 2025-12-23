@@ -21,7 +21,7 @@ public class TreatmentQueue {
         if (front == null) { //If queue is empty.
             front = node;
             rear = node;
-            System.out.println("First patient added. Added pattient:"+ request.patientId);
+            System.out.println("First patient added. \nAdded pattient:"+ request.patientId);
             size++;
         } else { //I added patient at the end.
             node.next = null;
