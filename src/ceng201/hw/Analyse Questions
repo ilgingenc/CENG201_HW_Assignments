@@ -1,1 +1,22 @@
-For addPatient(Patient p)
+For Task1:
+Big O notation is used to measure how an algorithm's
+running time changes depending on the input size.
+In this report, I examined the compexities of the addPatient,
+removePatient and findPatient methods in the patientList class.
+addPatient method adds the patient tot the end of the list.
+The whole list cannot be circulated in this method.
+The time complexity of this method is O(1) because of this reason.
+removePatient method goes through the list one by one by providing ID check.
+The wanted element may be at the end of the list or not at all.
+The time complexity of this method is O(n).
+findPatient method goes through the entire list and may not find
+it or may be at the end of the list.So, time complexity is O(n).
+ArrayList vs Linked List:
+for addPatient:Usually both have O(1)
+but in ArrayList sometimes it can be O(n)
+because the elements are copied when the array is full.
+Find process takes O(n) time in linked list and arraylist.
+Linked list is more useful in the deletion process.
+For this reason, if adding and deleting are more frequent,
+the Linked List is more convenient. In conclusion choosing the data
+structure is very important.
