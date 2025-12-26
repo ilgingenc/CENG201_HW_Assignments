@@ -6,7 +6,7 @@ public class TreatmentQueue {
     private int size;
 
 
-    private class Node {
+    private class Node { //constructor
         TreatmentRequest treatmentRequest;
         Node next;
 
@@ -15,13 +15,13 @@ public class TreatmentQueue {
         }
     }
 
-    public void enqueue(TreatmentRequest request) {
+    public void enqueue(TreatmentRequest request) { //Add a new patient to be treated to the tail
         Node node = new Node(request);
 
         if (front == null) { //If queue is empty.
             front = node;
             rear = node;
-            System.out.println("First patient added. \nAdded pattient:"+ request.patientId);
+            System.out.println("Added patient:"+ request.patientId);
             size++;
         } else { //I added patient at the end.
             node.next = null;
@@ -47,7 +47,6 @@ public class TreatmentQueue {
             TreatmentRequest current = front.treatmentRequest;
             front = front.next;
             size--;
-            System.out.println("Patient removed from queue: " + current.patientId);
 
             return current;
 

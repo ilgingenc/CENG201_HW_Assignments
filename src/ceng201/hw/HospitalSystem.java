@@ -19,51 +19,57 @@ public class HospitalSystem {
         this.patientMap = new HashMap<>();
     }
 
-    public void addNewPatient(Patient p) {
+    public void addNewPatient(Patient p) {//Adds new patients to the system
         patientList.addPatient(p);
         patientMap.put(p.id, p);
     }
 
-    public void addTreatmentRequest(TreatmentRequest request) {
-        if (request.isPriority) {
+    public void addTreatmentRequest(TreatmentRequest request) { //Adds to the order according to the patient's priority
+        if (request.isPriority) { //Priority patients
             priorityQueue.enqueue(request);
         } else {
-            normalQueue.enqueue(request);
+            normalQueue.enqueue(request);//Normal patients
         }
     }
 
-    public Patient processTreatment() {
+    public Patient processTreatment() throws InterruptedException { //first, the priority takes the patient,then the normal patient
         TreatmentRequest request;
         if (priorityQueue.size() > 0) {
             request = priorityQueue.dequeue();
+            System.out.println("Patient "+request.patientId+" removed from priority queue.");
 
         } else if (normalQueue.size() > 0) {
             request = normalQueue.dequeue();
+            System.out.println("Patient "+request.patientId+ " removed from normal queue.");
         } else {
             return null;
         }
+        Thread.sleep(200l);
         DischargeRecord dischargeRecord = new DischargeRecord(request.patientId, System.currentTimeMillis());
         dischargeStack.push(dischargeRecord);
         return patientMap.get(request.patientId);
     }
 
-    public void printSystemState() {
-        System.out.println("Current patients in system.");
+    public void printSystemState() { //Prints the current state of the system
+        System.out.println("Current patients in system:");
         patientList.printList();
+
 
         System.out.println("Priority treatment in queue:");
         priorityQueue.print();
+        System.out.println();
 
-        System.out.println("Normal treatment in queue");
+        System.out.println("Normal treatment in queue:");
         normalQueue.print();
+        System.out.println();
 
-        System.out.println("Discharge record:");
+
         dischargeStack.printStack();
 
     }
-    public void printPatientSortedBySeverity(){
+    public void printPatientSortedBySeverity(){ //Bubble sort algorithm is used
         ArrayList<Patient> patientListForSorting =new ArrayList<>(patientMap.values());
-        for (int i=0; i<patientListForSorting.size(); i++){
+        for (int i=0; i<patientListForSorting.size(); i++){ //bubble sort algorithm
             for (int j= 0 ;j<patientListForSorting.size()-1-i ;j++){
                 if (patientListForSorting.get(j).severity<patientListForSorting.get(j+1).severity){
                     Patient temp = patientListForSorting.get(j);

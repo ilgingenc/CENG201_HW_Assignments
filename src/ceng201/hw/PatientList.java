@@ -5,7 +5,7 @@ public class PatientList {
     private Node tail;
     private int patientCount = 0;
 
-    private class Node {
+    private class Node { //constructor
         Patient data;
         Node next;
 

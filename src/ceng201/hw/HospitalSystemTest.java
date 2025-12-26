@@ -1,7 +1,7 @@
 package ceng201.hw;
 
 public class HospitalSystemTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         HospitalSystem test = new HospitalSystem();
         Patient patient1 = new Patient(1, "Arda", 3, 20);
         Patient patient2 = new Patient(2, "Ilgın", 5, 21);
@@ -34,13 +34,12 @@ public class HospitalSystemTest {
         test.addTreatmentRequest(new TreatmentRequest(6, true));
         test.addTreatmentRequest(new TreatmentRequest(7, true));
         test.addTreatmentRequest(new TreatmentRequest(8, true));
-
+        Thread.sleep(200l);
         test.dischargeStack.push(new DischargeRecord(9, System.currentTimeMillis()));
+        Thread.sleep(200l);
         test.dischargeStack.push(new DischargeRecord(10, System.currentTimeMillis()));
 
         test.processTreatment();
-        //test.processTreatment();
-        //test.processTreatment();
 
         System.out.println("Final state");
         test.printSystemState();

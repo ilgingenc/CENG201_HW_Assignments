@@ -12,7 +12,7 @@ public class TreatmentRequest {
         this.isPriority=isPriority;
     }
 
-    public boolean isPriority() {
+    public boolean isPriority() { //Is the patieent a priority or not?
         return isPriority;
     }
 }
