@@ -45,3 +45,15 @@ elements are added or removed from known position. As a result, queue is
 thew right choice. Big O notation is used to describe the time complexity
 of algorithm. Since the enqueue() and dequeue() operations
 run in O(1) time, the queue structure is efficient for this system.
+
+For Task 3:
+First let's start with what Stack is. Stack logic is LIFO.
+Meaning is last in,first out. In this task, a stack structure was
+used to display discharged patients.The stack structure
+works according LIFO logic. This structure is suitable.
+It is requested to access the information of the last discharged
+patient. When the patient is discharged ,the person's
+information is recorded as a Discharge object. For push(),
+it is added to the top of the stack. The peek is used to view
+the last discharged patient. If you want to delete the record,
+In this way,order is ensure.
