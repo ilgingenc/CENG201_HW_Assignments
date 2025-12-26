@@ -3,7 +3,7 @@ Big O notation is used to measure how an algorithm's
 running time changes depending on the input size.
 In this report, I examined the compexities of the addPatient,
 removePatient and findPatient methods in the patientList class.
-addPatient method adds the patient tot the end of the list.
+addPatient method adds the patient to the end of the list.
 The whole list cannot be circulated in this method.
 The time complexity of this method is O(1) because of this reason.
 removePatient method goes through the list one by one by providing ID check.
@@ -20,3 +20,28 @@ Linked list is more useful in the deletion process.
 For this reason, if adding and deleting are more frequent,
 the Linked List is more convenient. In conclusion choosing the data
 structure is very important.
+
+For Task 2:
+The queue data structure is suitable for managing treatment
+request in a hospital system. Choosing  the right data structure
+ensures that the system operates more efficiently.
+The queue structure operates on FIFO principle.
+In addition this method is used in bank queues,hospital
+queues and bread queues. In hospital system,
+the patient who comes first is treated first.
+This situation ensures justice among patients.
+A priority queue is created for priority patients.
+In this way, priority patients are given importance.
+Without this separation, emergency situations may be delayed.
+This method allows faster treatment of emergency patients.
+If stack had been used in this system, it would have caused some problems.
+The stack structure works with LIFO logic.
+This means that patients who come first
+have to wait longer. This system is not correct and logical.
+This system creates unfair situations in the hospital environment.
+In the queue, operations enqueue() and dequeue()
+are performed in O(1) time period.These operations are fast because
+elements are added or removed from known position. As a result, queue is
+thew right choice. Big O notation is used to describe the time complexity
+of algorithm. Since the enqueue() and dequeue() operations
+run in O(1) time, the queue structure is efficient for this system.
