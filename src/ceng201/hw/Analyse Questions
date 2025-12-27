@@ -69,3 +69,30 @@ O(1) time.This is important in terms of time complexity.
 In a queue structure, the enqueue and dequeue operations
 also take O(1) time. So, the stack data  structure is the correct,
 simple and logical choice for managing discharge records.
+
+For Task 4:
+The logic behind this assignment was to use two separate
+queue structure. There is one queue for priority patients
+and another queue for normal patients. When a new treatment
+request is added, if the patient is priority, it is
+added to the priority queue. Otherwise, it is added to the
+normal queue. This insertion operation takes O(1) time for
+both queues because the element is added directly to the
+end of the queue. When processing a treatment request, the
+priority queue is checked first. If there is a patient in this
+queue, the request is taken from there. Otherwise, it is taken
+from normal queue. This operation also takes O(1) time. In this
+way, priority patients are taken forward and FIFO logic is
+processed. A sorting algorithm was used to sort patients by
+severity or waiting time. For small numbers of patients,
+Bubble Sort is enough and has an O(n square) time complexity.
+For larger patients numbers, using Merge Sort can achieve
+faster sorting with O(n log n) complexity. If there are many
+priority patients in the system, using a heap-based priority
+queue makes operations more efficient. When using a heap, enqueue
+and dequeue operations take O(log n) time nad all priority patients
+can be processed quickly in a single data structure. Therefore,
+while two queue approach is simple and sufficient for small and medium
+sized systems, the heap-based structure improves performance in large data
+sets and when there are many priority patients.
+
