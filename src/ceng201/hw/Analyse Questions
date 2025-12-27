@@ -54,6 +54,18 @@ works according LIFO logic. This structure is suitable.
 It is requested to access the information of the last discharged
 patient. When the patient is discharged ,the person's
 information is recorded as a Discharge object. For push(),
-it is added to the top of the stack. The peek is used to view
-the last discharged patient. If you want to delete the record,
-In this way,order is ensure.
+it is added to the top of the stack. The peek() is used to view
+the last discharged patient. If you want to delete the recording,
+you can use pop().  If the queue structure were used in this
+system, it would cause problems. The queue structure operates
+operates according to the FIFO logic. In this case, the record
+of the first discharged patient would be processed first.
+However, in practice, older discharge records are usually
+less important. The hospital takes care of the most up-to-date
+discharge information. Therefore, the queue structure does
+not make much sense. In a stack implemented using a linked
+list, to push,pop and peek operations are performed in
+O(1) time.This is important in terms of time complexity.
+In a queue structure, the enqueue and dequeue operations
+also take O(1) time. So, the stack data  structure is the correct,
+simple and logical choice for managing discharge records.
