@@ -1,7 +1,7 @@
 For Task1:
 Big O notation is used to measure how an algorithm's
 running time changes depending on the input size.
-In this report, I examined the compexities of the addPatient,
+In this report, I examined the complexities of the addPatient,
 removePatient and findPatient methods in the patientList class.
 addPatient method adds the patient to the end of the list.
 The whole list cannot be circulated in this method.
@@ -90,7 +90,7 @@ For larger patients numbers, using Merge Sort can achieve
 faster sorting with O(n log n) complexity. If there are many
 priority patients in the system, using a heap-based priority
 queue makes operations more efficient. When using a heap, enqueue
-and dequeue operations take O(log n) time nad all priority patients
+and dequeue operations take O(log n) time and all priority patients
 can be processed quickly in a single data structure. Therefore,
 while two queue approach is simple and sufficient for small and medium
 sized systems, the heap-based structure improves performance in large data
